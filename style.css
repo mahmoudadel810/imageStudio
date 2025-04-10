@@ -1,0 +1,130 @@
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     font-family: Arial, sans-serif;
+ }
+
+ body {
+     background-color: #f4f4f4;
+     padding: 20px;
+ }
+
+ h1 {
+     text-align: center;
+     margin-bottom: 40px;
+     color: #333;
+ }
+
+ .gallery-container {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+     gap: 1rem;
+     max-width: 1200px;
+     margin: auto;
+ }
+
+ .gallery-item {
+     overflow: hidden;
+     width: 100;
+     aspect-ratio: 1/1;
+     border-radius: 10px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     background-color: #fff;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .gallery-item:hover {
+     transform: scale(1.05);
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+     cursor: pointer;
+ }
+
+ .gallery-item img {
+     width: 100%;
+     height: 100%;
+     display: block;
+     border-bottom: 1px solid #ddd;
+ }
+
+ .caption {
+     padding: 15px;
+     text-align: center;
+     color: #666;
+ }
+
+ /* ......... */
+
+ #imageModal {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 9999;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .overlay {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.7);
+ }
+
+ .modal-content {
+     position: relative;
+     z-index: 10000;
+     max-width: 90%;
+     max-height: 90%;
+ }
+
+ .modal-content img {
+     width: 100%;
+     height: auto;
+     border-radius: 10px;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+ }
+
+ #modalImg {
+     width: 100%;
+     height: auto;
+ }
+
+ .close {
+     position: absolute;
+     top: -10px;
+     right: -10px;
+     font-size: 30px;
+     color: #fff;
+     background: #333;
+     width: 40px;
+     height: 40px;
+     text-align: center;
+     line-height: 40px;
+     border-radius: 50%;
+     cursor: pointer;
+     z-index: 10001;
+ }
+
+ .nav {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     font-size: 40px;
+     color: #fff;
+     padding: 10px;
+     cursor: pointer;
+     user-select: none;
+     z-index: 10001;
+ }
+
+ .nav.left {
+     left: -60px;
+ }
+
+ .nav.right {
+     right: -60px;
+ }
